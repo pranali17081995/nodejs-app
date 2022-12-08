@@ -7,7 +7,7 @@ pipeline {
 	SERVICE_NAME=nodejs-container-service
 	TASK_DEFINITION_NAME=first-run-task-definition
 	DESIRED_COUNT=1
-        IMAGE_REPO_NAME=public.ecr.aws/h8e7q1b7/container-repo
+        IMAGE_REPO_NAME=container-repo
         IMAGE_TAG="${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
 	registryCredential = demo-admin-user
