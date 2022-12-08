@@ -3,7 +3,7 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID=460132273510
         AWS_DEFAULT_REGION=ap-south-1 
-	CLUSTER_NAME=default
+	CLUSTER_NAME= Default
 	SERVICE_NAME=nodejs-container-service
 	TASK_DEFINITION_NAME=first-run-task-definition:1
 	DESIRED_COUNT=1
