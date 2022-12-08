@@ -5,7 +5,7 @@ pipeline {
         AWS_DEFAULT_REGION=ap-south-1 
 	CLUSTER_NAME=devcluster
 	SERVICE_NAME=nodejs-container-service
-	TASK_DEFINITION_NAME=first-run-task-definition:2
+	TASK_DEFINITION_NAME=first-run-task-definition
 	DESIRED_COUNT=1
         IMAGE_REPO_NAME=public.ecr.aws/h8e7q1b7/container-repo
         IMAGE_TAG="${env.BUILD_ID}"
