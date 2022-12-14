@@ -35,9 +35,12 @@ metadata:
   labels:
     run: webapp
 spec:
+  type: LoadBalancer
   ports:
-  - port: 3000
-    protocol: TCP
+  - protocol: TCP
+    port: 5000
+    targetPort: 3000
+    nodePort: 31110
   selector:
     app: webapp
-  type: NodePort
+  
