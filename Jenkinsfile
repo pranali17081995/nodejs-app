@@ -64,9 +64,9 @@ sh 'aws ecr get-login-password â€” region ${AWS_DEFAULT_REGION} | docker login â
 // 			sh './script.sh'
 //                 }
 //             } 
-        }
+//         }
 //       }      
       
-    }
+    
 }
 
