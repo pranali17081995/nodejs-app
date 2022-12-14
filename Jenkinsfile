@@ -39,7 +39,7 @@ pipeline {
      steps{  
          script {       
 		        aws ecr get-login-password --region ap-south-1 | docker login --username AWS \
---password-stdin 460132273510.dkr.ecr.ap-south-1.amazonaws.com/container-repo
+--password-stdin 460132273510.dkr.ecr.ap-south-1.amazonaws.com
 			docker.withRegistry("https://" + REPOSITORY_URI, "ecr:${AWS_DEFAULT_REGION}:" + registryCredential) {
                     	dockerImage.push()
                 	}
