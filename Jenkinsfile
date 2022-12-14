@@ -57,15 +57,15 @@ sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --u
         }
      
       
-    stage('Deploy') {
-     steps{
-             withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
-                script {
-			sh 'kubectl apply -f deployment.yml --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
-                }
-	     }
-        }
-      } 
+//     stage('Deploy') {
+//      steps{
+//              withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
+//                 script {
+// 			sh 'kubectl apply -f deployment.yml --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
+//                 }
+// 	     }
+//         }
+//       } 
     stage('Deploy on K8s') {
      steps{
              sshagent(['k8s']) {
