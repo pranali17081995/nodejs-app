@@ -57,15 +57,15 @@ sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --u
         }
       }
       
-//     stage('Deploy') {
-//      steps{
-//             withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
-//                 script {
-// 			sh './script.sh'
-//                 }
-//             } 
-//         }
-//       }      
+    stage('Deploy') {
+     steps{
+            withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
+                script {
+			sh 'kubectl apply -f deployment.yml'
+                }
+            } 
+        }
+      }      
       
     
 }
