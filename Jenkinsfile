@@ -61,6 +61,8 @@ sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --u
      steps{
 //              withAWS(credentials: registryCredential, region: "${AWS_DEFAULT_REGION}") {
                 script {
+			sh 'aws eks update-kubeconfig --region ap-south-1 --name eks-min-cluster'
+
 			sh 'kubectl apply -f deployment.yml'
                 }
 // 	     }
