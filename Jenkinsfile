@@ -77,8 +77,8 @@ sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --u
 // 			}catch(error){
 			
 // 			sh 'ssh ubuntu@3.109.123.147 kubectl create -f . --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
-			sh 'ssh ubuntu@3.109.123.147 whoami'
-		        sh 'ssh ubuntu@3.109.123.147 kubectl get nodes'
+			sh 'ssh ubuntu@3.109.123.147 whoami ; kubectl get nodes'
+// 		        sh 'ssh ubuntu@3.109.123.147 kubectl get nodes'
 // 			}
                 }
 	     }
