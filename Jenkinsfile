@@ -71,10 +71,11 @@ sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --u
              sshagent(['k8s']) {
 		sh "scp -o StrictHostKeyChecking=no deployment.yml ubuntu@3.109.123.147:/home/ubuntu"
                 script {
-			try{
-			sh 'ssh ubuntu@3.109.123.147 kubectl apply -f . --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
-			}catch(error){
-			sh 'ssh ubuntu@3.109.123.147 kubectl create -f . --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
+// 			try{
+// 			sh 'ssh ubuntu@3.109.123.147 kubectl apply -f . --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
+// 			}catch(error){
+// 			sh 'ssh ubuntu@3.109.123.147 kubectl create -f . --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
+			sh 'ssh ubuntu@3.109.123.147 kubectl get nodes'
 			}
                 }
 	     }
