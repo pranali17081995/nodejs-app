@@ -69,8 +69,8 @@ sh 'aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --u
     stage('Deploy on K8s') {
      steps{
              sshagent(['k8s']) {
-		sh "scp -o StrictHostKeyChecking=no deployment.yml ubuntu@3.109.123.147:/home/ubuntu"
-		sh 'ssh ubuntu@3.109.123.147 sudo su - ubuntu'
+		sh "scp -o StrictHostKeyChecking=no deployment.yml root@3.109.123.147:/home/ubuntu"
+		sh 'ssh root@3.109.123.147 sudo su - ubuntu'
                 script {
 // 			try{
 // 			sh 'ssh ubuntu@3.109.123.147 kubectl apply -f . --context arn:aws:eks:ap-south-1:460132273510:cluster/eks-min-cluster'
